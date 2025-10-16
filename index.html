@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo de volta - Emagrecimento com Hipnose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-image {
+            max-width: 400px;
+            width: 100%;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        
+        /* OBJEÇÃO BUTTONS */
+        .objecao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .objecao-btn {
+            background: white;
+            color: #667eea;
+            padding: 20px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .objecao-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .objecao-btn .emoji {
+            font-size: 2em;
+        }
+        
+        /* CELEBRITY SECTION */
+        .celebrity-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .celebrity-section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .celebrity-section .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #718096;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .celebrity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .celebrity-card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 30px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .celebrity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .celebrity-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .celebrity-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        
+        .celebrity-card .profession {
+            color: #718096;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .celebrity-card .result {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .celebrity-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .celebrity-card .source-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .celebrity-card .source-link:hover {
+            border-bottom-color: #667eea;
+        }
+        
+        /* VER MAIS BUTTON */
+        .ver-mais-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .ver-mais-btn {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ver-mais-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* MODAL VER MAIS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            color: #718096;
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #2d3748;
+        }
+        
+        .modal-content h2 {
+            margin-bottom: 30px;
+            color: #2d3748;
+        }
+        
+        .celebrity-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .celebrity-list-item {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .celebrity-list-item h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .celebrity-list-item p {
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        
+        .celebrity-list-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* OBJEÇÃO DOBRAS */
+        .objecao-dobra {
+            display: none;
+            background: white;
+            padding: 60px 20px;
+            border-top: 5px solid #667eea;
+        }
+        
+        .objecao-dobra.active {
+            display: block;
+        }
+        
+        .objecao-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .objecao-content h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #2d3748;
+        }
+        
+        .objecao-content h3 {
+            font-size: 1.5em;
+            margin: 30px 0 15px;
+            color: #667eea;
+        }
+        
+        .objecao-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+        
+        .objecao-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .objecao-content li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+        
+        .highlight-box {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box strong {
+            color: #2d3748;
+            font-size: 1.2em;
+        }
+        
+        /* CARROSSEL DE QUOTES */
+        .quotes-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .quote-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .quote-card .quote-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .quote-card .quote-text {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        
+        .quote-card .quote-author {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .quote-card .quote-subtitle {
+            color: #718096;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+        
+        .quote-card .quote-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        /* COMPARAÇÃO TABLE */
+        .comparison-section {
+            background: #f7fafc;
+            padding: 60px 20px;
+        }
+        
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+        
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            font-size: 1.05em;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table .col-teria {
+            color: #48bb78;
+            font-weight: 600;
+        }
+        
+        .comparison-table .col-tem {
+            color: #f56565;
+            font-weight: 600;
+        }
+        
+        .cta-after-table {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        
+        /* OFERTA SECTION */
+        .oferta-section {
+            background: white;
+            padding: 80px 20px;
+        }
+        
+        .oferta-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .oferta-box h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .oferta-box .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+        
+        .garantia-destaque {
+            background: rgba(255,255,255,0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .garantia-destaque h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .garantia-destaque p {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+        .bonus-list {
+            margin: 30px 0;
+        }
+        
+        .bonus-item {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid white;
+        }
+        
+        .bonus-item h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .bonus-item p {
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .bonus-item .valor {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .price-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .price-old {
+            font-size: 1.3em;
+            text-decoration: line-through;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .price-new {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .price-installments {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        /* CTA BUTTON */
+        .cta-button {
+            display: block;
+            background: white;
+            color: #667eea;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            margin: 30px auto;
+            max-width: 500px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05em;
+        }
+        
+        /* FAQ SECTION */
+        .faq-section {
+            background: #f7fafc;
+            padding: 80px 20px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .faq-section .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3748;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f7fafc;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f7fafc;
+        }
+        
+        .faq-answer.active {
+            max-height: 1000px;
+        }
+        
+        .faq-answer-content {
+            padding: 25px;
+            color: #4a5568;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        /* FINAL CTA SECTION */
+        .final-cta-section {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .final-cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .final-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        .final-option {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .final-option h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .final-option p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+            
+            .celebrity-grid,
+            .quotes-carousel {
+                grid-template-columns: 1fr;
+            }
+            
+            .oferta-box {
+                padding: 30px 20px;
+            }
+            
+            .price-new {
+                font-size: 2.2em;
+            }
+            
+            .modal-content {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Bem-vindo(a) de volta! Vamos ser honestos...</h1>
+            
+            <img src="pessoa-medindo-cintura.jpg" alt="Pessoa medindo a cintura" class="hero-image">
+            
+            <p>Você respondeu as perguntas, descobriu algo importante sobre você: seu perfil DIETÉTICO. Estava pronto(a) para mudar seus hábitos e comportamentos para emagrecer de forma natural... mas algo te freou. Eu entendo perfeitamente. E quero resolver isso AGORA. Mas antes me conta o que realmente aconteceu?</p>
+            
+            <div class="objecao-grid">
+                <button class="objecao-btn" onclick="mostrarDobra('duvida')">
+                    <span class="emoji">🤔</span>
+                    <span>Ficou na dúvida se realmente funciona?</span>
+                </button>
+                
+                <button class="objecao-btn" onclick="mostrarDobra('momento')">
+                    <span class="emoji">⏰</span>
+                    <span>Achou que não era o momento?</span>
+                </button>
+                
+                <button class="objecao-btn" onclick="mostrarDobra('medo')">
+                    <span class="emoji">😰</span>
+                    <span>Teve medo de não funcionar COM VOCÊ?</span>
+                </button>
+                
+                <button class="objecao-btn" onclick="mostrarDobra('golpe')">
+                    <span class="emoji">💔</span>
+                    <span>Achou que era golpe?</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CELEBRITY SECTION -->
+    <section class="celebrity-section">
+        <div class="container">
+            <h2>Hipnose para emagrecer? Não é "coisa alternativa". É ciência usada por quem você conhece.</h2>
+            
+            <p class="subtitle">Celebridades do mundo todo escolhem hipnose porque <strong>funciona</strong>. E elas podem pagar qualquer tratamento do mundo.</p>
+            
+            <div class="celebrity-grid">
+                <!-- ADELE -->
+                <div class="celebrity-card">
+                    <div class="icon">🎤</div>
+                    <h3>Adele</h3>
+                    <p class="profession">Cantora britânica</p>
+                    <p class="result">Perdeu aproximadamente 50kg com hipnoterapia</p>
+                    <p>Adele trabalhou com a renomada hipnoterapeuta Susan Hepburn e transformou não só seu corpo, mas sua relação com a comida.</p>
+                    <a href="https://www.hellomagazine.com/healthandbeauty/health-and-fitness/20190214067199/sarah-ferguson-hypnotherapy-weight-loss-adele/" target="_blank" class="source-link">Matéria completa no Hello Magazine →</a>
+                </div>
+                
+                <!-- LILY ALLEN -->
+                <div class="celebrity-card">
+                    <div class="icon">🎵</div>
+                    <h3>Lily Allen</h3>
+                    <p class="profession">Cantora</p>
+                    <p class="result">Reduziu 3 tamanhos de roupa após hipnoterapia</p>
+                    <p>Depois de tentar "das dietas simples às mais mirabolantes", Lily Allen embarcou na hipnose — e funcionou.</p>
+                    <a href="https://www.terra.com.br/vida-e-estilo/autocuidado/lily-allen-faz-tratamento-de-hipnose-para-emagrecer,be7a81e53VgnCLD200000bbcceb0aRCRD.html" target="_blank" class="source-link">Matéria no Terra →</a>
+                </div>
+                
+                <!-- SARAH FERGUSON -->
+                <div class="celebrity-card">
+                    <div class="icon">👑</div>
+                    <h3>Sarah Ferguson</h3>
+                    <p class="profession">Duquesa de York</p>
+                    <p class="result">Superou compulsão alimentar desde a infância</p>
+                    <p><em>"Eu sei como é lutar contra o peso desde os 10 anos... A comida havia se tornado meu vício."</em></p>
+                    <a href="https://www.hellomagazine.com/healthandbeauty/health-and-fitness/20190214067199/sarah-ferguson-hypnotherapy-weight-loss-adele/" target="_blank" class="source-link">Matéria no Hello Magazine →</a>
+                </div>
+            </div>
+            
+            <div class="ver-mais-container">
+                <button class="ver-mais-btn" onclick="abrirModal()">Ver mais celebridades que usaram hipnose →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL VER MAIS CELEBRIDADES -->
+    <div id="modalCelebrities" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <h2>Outras Celebridades que Usaram Hipnose</h2>
+            
+            <div class="celebrity-list">
+                <h3 style="color: #667eea; margin-bottom: 20px;">Para Emagrecimento:</h3>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Geri Halliwell (Spice Girls)</h4>
+                    <p>Perda de peso significativa</p>
+                    <a href="https://danielolson.com/celebrity-hypnosis/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Oprah Winfrey</h4>
+                    <p>Perda e manutenção de peso</p>
+                    <a href="https://danielolson.com/celebrity-hypnosis/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Fergie</h4>
+                    <p>Escolhas alimentares mais saudáveis</p>
+                    <a href="https://danielolson.com/celebrity-hypnosis/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Carmen Reis</h4>
+                    <p>Perdeu 10kg em 8 semanas</p>
+                    <a href="https://oglobo.globo.com/ela/gente/noticia/2023/11/dieta-da-hipnose-madrinha-de-bateria-revela-que-hipnoterapia-ajudou-a-perder-10-kg-para-o-carnaval.ghtml" target="_blank">Ver matéria no O Globo →</a>
+                </div>
+                
+                <h3 style="color: #667eea; margin: 40px 0 20px;">Para Parar de Fumar:</h3>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Matt Damon</h4>
+                    <p><em>"Funcionou! Eu deveria ter feito anos atrás. Foi a melhor decisão da minha vida."</em></p>
+                    <a href="https://www.youtube.com/watch?v=fYqoGEbqE" target="_blank">Assistir depoimento no vídeo →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Drew Barrymore</h4>
+                    <p>Parou de fumar com hipnose</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Ellen DeGeneres</h4>
+                    <p>Parou de fumar com hipnose</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <h3 style="color: #667eea; margin: 40px 0 20px;">Para Performance e Bem-Estar:</h3>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Tiger Woods</h4>
+                    <p>Foco e performance mental no golfe</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Tiger Woods</h4>
+                    <p>Foco e performance mental no golfe</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Gisele Bündchen</h4>
+                    <p>Parto sem dor (Hypnobirthing)</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Kate Middleton</h4>
+                    <p>Tratamento de hiperêmese gravídica</p>
+                    <a href="https://getgrace.com/blogs/5-celebrities-who-used-hypnosis/uncategorized/" target="_blank">Ver fonte →</a>
+                </div>
+                
+                <div class="celebrity-list-item">
+                    <h4>✅ Dedé Santana</h4>
+                    <p>Controle do estresse</p>
+                    <a href="https://moshebergel.com.br/confira-uma-lista-de-celebridades-que-ja-recorreram-a-hipnoterapia/" target="_blank">Ver fonte →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOBRA 1: DÚVIDA SE FUNCIONA -->
+    <section id="dobra-duvida" class="objecao-dobra">
+        <div class="objecao-content">
+            <h2>🤔 Eu entendo completamente. Hipnose parece "coisa de filme", né?</h2>
+            
+            <p>Deixa eu te contar algo: <strong>você já provou que funciona quando fez o quiz.</strong></p>
+            
+            <p>Sabe aquelas perguntas sobre seus comportamentos alimentares? Elas não eram aleatórias. Elas foram desenhadas para identificar seus <strong>padrões inconscientes</strong> — aqueles que te fazem:</p>
+            
+            <ul>
+                <li>Comer sem fome de verdade</li>
+                <li>Sabotar a dieta no final de semana</li>
+                <li>Desistir toda vez que "escorrega"</li>
+                <li>Associar comida com conforto emocional</li>
+            </ul>
+            
+            <p><strong>E o quiz acertou, não foi?</strong> Você se reconheceu naquele perfil dietético.</p>
+            
+            <p>Pois é. <strong>Isso JÁ é hipnose funcionando</strong> — acessar o que está escondido na sua mente.</p>
+            
+            <p>A diferença é que agora, em vez de só IDENTIFICAR o problema, você vai <strong>REPROGRAMAR</strong> esses padrões.</p>
+            
+            <div class="highlight-box">
+                <h3>Mas não acredite em mim. Acredite na ciência:</h3>
+                <p>A hipnoterapia para emagrecimento tem <strong>mais de 50 anos de estudos científicos</strong>. Não é "achismo" nem misticismo.</p>
+                <p>É neurociência aplicada. E funciona porque:</p>
+                <ul>
+                    <li>✅ <strong>70% do seu comportamento alimentar é inconsciente</strong> (você come por hábito, não por escolha consciente)</li>
+                    <li>✅ <strong>A força de vontade sozinha tem 8% de taxa de sucesso</strong> (por isso dietas não funcionam a longo prazo)</li>
+                    <li>✅ <strong>Hipnose acessa e modifica crenças limitantes</strong> que sabotam seus resultados há anos</li>
+                </ul>
+            </div>
+            
+            <h3>Não acredite em mim. Acredite nelas:</h3>
+            
+            <div class="quotes-carousel">
+                <div class="quote-card">
+                    <div class="quote-icon">💬</div>
+                    <p class="quote-text">"Eu não acreditava que pudesse ser hipnotizada na primeira vez."</p>
+                    <p class="quote-author">Lily Allen</p>
+                    <p class="quote-subtitle">Cantora - Reduziu 3 tamanhos após hipnoterapia</p>
+                    <a href="https://www.terra.com.br/vida-e-estilo/autocuidado/lily-allen-faz-tratamento-de-hipnose-para-emagrecer,be7a81e53VgnCLD200000bbcceb0aRCRD.html" target="_blank" class="quote-link">Leia a história completa →</a>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">💬</div>
+                    <p class="quote-text">"Funcionou! Eu juro por Deus que funcionou. Foi a melhor decisão da minha vida."</p>
+                    <p class="quote-author">Matt Damon</p>
+                    <p class="quote-subtitle">Ator - Parou de fumar após 16 anos (2 maços/dia)</p>
+                    <a href="https://www.youtube.com/watch?v=fYqoGEbqE" target="_blank" class="quote-link">Assista o vídeo →</a>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">💬</div>
+                    <p class="quote-text">"A comida havia se tornado meu vício. Toda vez que as coisas ficavam difíceis, eu comia para compensar."</p>
+                    <p class="quote-author">Sarah Ferguson</p>
+                    <p class="quote-subtitle">Duquesa de York - Superou compulsão alimentar</p>
+                    <a href="https://www.hellomagazine.com/healthandbeauty/health-and-fitness/20190214067199/sarah-ferguson-hypnotherapy-weight-loss-adele/" target="_blank" class="quote-link">Leia no Hello Magazine →</a>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>"Mas e se não funcionar COMIGO especificamente?"</h3>
+                <p>Por isso existe a <strong>Garantia de 21 dias</strong>.</p>
+                <p>Você não precisa acreditar agora. <strong>Experimente por 21 dias</strong> e veja sua relação com a comida mudar. Se não mudar? Devolvo 100% do seu dinheiro.</p>
+                <p><strong>Você literalmente não tem nada a perder. Apenas peso (e crenças limitantes).</strong></p>
+            </div>
+            
+            <a href="#oferta" class="cta-button">QUERO EXPERIMENTAR SEM RISCO</a>
+        </div>
+    </section>
+
+    <!-- DOBRA 2: NÃO É O MOMENTO -->
+    <section id="dobra-momento" class="objecao-dobra">
+        <div class="objecao-content">
+            <h2>⏰ Posso ser bem direta(o) com você?</h2>
+            
+            <p><strong>"Não é o momento" é a desculpa que sua mente usa há quanto tempo?</strong></p>
+            
+            <p>6 meses? 1 ano? 5 anos?</p>
+            
+            <p>Deixa eu adivinhar os "momentos melhores" que você está esperando:</p>
+            
+            <ul>
+                <li>❌ "Quando passar as festas de fim de ano..."</li>
+                <li>❌ "Depois que o trabalho acalmar..."</li>
+                <li>❌ "Quando eu tiver mais tempo..."</li>
+                <li>❌ "No começo do ano eu começo..."</li>
+                <li>❌ "Depois do aniversário/casamento/viagem..."</li>
+            </ul>
+            
+            <p><strong>Reconheceu algum?</strong></p>
+            
+            <div class="highlight-box">
+                <p><strong>A verdade que ninguém te conta: NUNCA vai ser o momento perfeito.</strong></p>
+                <p>Sempre vai ter:</p>
+                <ul>
+                    <li>Um evento</li>
+                    <li>Um compromisso</li>
+                    <li>Um período estressante</li>
+                    <li>Uma desculpa válida</li>
+                </ul>
+            </div>
+            
+            <p>Sabe qual é a diferença entre quem emagrece e quem não emagrece?</p>
+            
+            <p><strong>Quem emagrece decide APESAR das circunstâncias. Não por causa delas.</strong></p>
+            
+            <h3>Olha o que vai acontecer nos próximos 3 meses:</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="background: #fff5f5; padding: 30px; border-radius: 15px; border-left: 5px solid #f56565;">
+                    <h4 style="color: #c53030; font-size: 1.5em; margin-bottom: 15px;">OPÇÃO 1: Você fecha essa página de novo</h4>
+                    <ul style="color: #742a2a;">
+                        <li>Daqui a 90 dias você está no mesmo peso (ou mais pesada(o))</li>
+                        <li>Ainda evitando o espelho</li>
+                        <li>Ainda com o guarda-roupa cheio de roupas que "um dia vai usar"</li>
+                        <li>Ainda pensando "deveria ter tentado"</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f0fff4; padding: 30px; border-radius: 15px; border-left: 5px solid #48bb78;">
+                    <h4 style="color: #22543d; font-size: 1.5em; margin-bottom: 15px;">OPÇÃO 2: Você começa HOJE</h4>
+                    <ul style="color: #22543d;">
+                        <li>Em 21 dias nota mudança na relação com comida</li>
+                        <li>Em 45 dias as roupas começam a folgar</li>
+                        <li>Em 90 dias perdeu 8-15kg e não reconhece mais a pessoa antiga</li>
+                        <li>Olha para trás e pensa "melhor decisão que tomei"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.3em; text-align: center; margin: 40px 0;"><strong>A diferença? Uma decisão. Agora.</strong></p>
+            
+            <div class="highlight-box">
+                <p>E olha: você nem precisa estar "preparada(o)". O programa <strong>PREPARA você no processo</strong>.</p>
+                <p>A hipnose trabalha exatamente nisso: <strong>eliminar a necessidade de "estar pronto"</strong> e criar a prontidão enquanto você age.</p>
+            </div>
+            
+            <a href="#oferta" class="cta-button">ESCOLHO A OPÇÃO 2 - COMEÇAR HOJE</a>
+        </div>
+    </section>
+
+    <!-- DOBRA 3: MEDO DE NÃO FUNCIONAR -->
+    <section id="dobra-medo" class="objecao-dobra">
+        <div class="objecao-content">
+            <h2>😰 "Funciona pra todo mundo, menos pra mim..."</h2>
+            
+            <p><strong>Reconhece esse pensamento?</strong></p>
+            
+            <p>Deixa eu te dizer algo que talvez ninguém nunca tenha dito:</p>
+            
+            <div class="highlight-box">
+                <p style="font-size: 1.3em;"><strong>Esse pensamento é EXATAMENTE a prova de que você precisa disso.</strong></p>
+            </div>
+            
+            <p>Sabe por quê?</p>
+            
+            <p>Porque essa crença de "não vai funcionar comigo" <strong>É uma das crenças limitantes que a hipnose vai eliminar</strong>.</p>
+            
+            <p>É ela que faz você:</p>
+            <ul>
+                <li>Sabotar resultados quando começa a emagrecer</li>
+                <li>Desistir no primeiro "deslize"</li>
+                <li>Achar que é "diferente" dos outros</li>
+                <li>Sentir que "não merece" o corpo que deseja</li>
+            </ul>
+            
+            <h3>Vou te mostrar algo:</h3>
+            
+            <p>Você conhece aquela pessoa que "come de tudo e não engorda"?</p>
+            
+            <p>Ou aquela que "perdeu peso e manteve pra sempre"?</p>
+            
+            <p><strong>Não é genética. Não é sorte. É MENTALIDADE.</strong></p>
+            
+            <p>A diferença entre você e essa pessoa não está no corpo. <strong>Está nas crenças inconscientes sobre comida, corpo e merecimento.</strong></p>
+            
+            <div class="highlight-box">
+                <p>E sabe qual é a boa notícia?</p>
+                <p style="font-size: 1.2em;"><strong>Crenças podem ser reprogramadas. E é exatamente isso que a hipnose faz.</strong></p>
+            </div>
+            
+            <h3>"Mas eu JÁ tentei de tudo..."</h3>
+            
+            <p>Exatamente por isso precisa de algo diferente.</p>
+            
+            <p>Você não tentou "tudo". Você tentou várias versões da <strong>MESMA coisa</strong>: força de vontade consciente.</p>
+            
+            <ul>
+                <li>Dietas? Força de vontade.</li>
+                <li>Academia? Força de vontade.</li>
+                <li>Apps de nutrição? Força de vontade.</li>
+            </ul>
+            
+            <p><strong>Nenhuma delas mexeu no seu INCONSCIENTE</strong> — onde 70% das suas decisões alimentares acontecem.</p>
+            
+            <p>É como tentar esvaziar o oceano com um baldinho. Não é falta de esforço. <strong>É a ferramenta errada.</strong></p>
+            
+            <div class="highlight-box">
+                <h3>Olha: eu não posso PROMETER que você vai perder X quilos.</h3>
+                <p>Mas posso GARANTIR que:</p>
+                <ul>
+                    <li>✅ Sua relação com comida vai mudar nos primeiros 21 dias</li>
+                    <li>✅ Vai entender (e desativar) seus gatilhos emocionais</li>
+                    <li>✅ Vai parar de se sabotar inconscientemente</li>
+                    <li>✅ Vai comer por necessidade, não por compensação</li>
+                </ul>
+                <p><strong>E quando isso acontece, o emagrecimento é CONSEQUÊNCIA. Não sacrifício.</strong></p>
+                <p>Se não acontecer? <strong>Devolvo 100% do seu dinheiro + R$ 100 pelo tempo investido.</strong></p>
+            </div>
+            
+            <p style="font-size: 1.2em; text-align: center; margin: 40px 0;"><strong>Você consegue pensar em uma razão racional para não tentar?</strong></p>
+            
+            <a href="#oferta" class="cta-button">QUERO QUEBRAR MINHAS CRENÇAS LIMITANTES</a>
+        </div>
+    </section>
+
+    <!-- DOBRA 4: MEDO DE GOLPE -->
+    <section id="dobra-golpe" class="objecao-dobra">
+        <div class="objecao-content">
+            <h2>💔 Entendo COMPLETAMENTE. A internet está cheia de promessas falsas.</h2>
+            
+            <p><strong>"Perca 10kg em 1 semana!"</strong><br>
+            <strong>"Emagreça dormindo!"</strong><br>
+            <strong>"Pílula mágica que derrete gordura!"</strong></p>
+            
+            <p>É muita mentira. Eu também ficaria desconfiada(o).</p>
+            
+            <p>Então vou ser extremamente honesta(o) com você:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="background: #fff5f5; padding: 30px; border-radius: 15px;">
+                    <h3 style="color: #c53030; margin-bottom: 20px;">O QUE ESTE PROGRAMA NÃO É:</h3>
+                    <ul style="color: #742a2a;">
+                        <li>❌ Não é pílula mágica</li>
+                        <li>❌ Não promete "perca 20kg em 30 dias"</li>
+                        <li>❌ Não é fórmula milagrosa sem esforço nenhum</li>
+                        <li>❌ Não funciona se você não fizer sua parte</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f0fff4; padding: 30px; border-radius: 15px;">
+                    <h3 style="color: #22543d; margin-bottom: 20px;">O QUE ESTE PROGRAMA É:</h3>
+                    <ul style="color: #22543d;">
+                        <li>✅ Método baseado em <strong>neurociência e hipnoterapia</strong></li>
+                        <li>✅ Vai te ajudar a <strong>mudar comportamentos</strong></li>
+                        <li>✅ Exige que você <strong>ouça os áudios e aplique</strong></li>
+                        <li>✅ Resultados <strong>progressivos e sustentáveis</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>"Então por que devo confiar?"</h3>
+            
+            <p>Não deve. <strong>Não confie em MIM. Confie na GARANTIA.</strong></p>
+            
+            <div class="highlight-box">
+                <h3>🛡️ 21 dias de garantia incondicional</h3>
+                <p>Você testa por 21 dias. Se:</p>
+                <ul>
+                    <li>Não sentir mudança na relação com comida</li>
+                    <li>Achar que não vale a pena</li>
+                    <li>Por QUALQUER motivo não gostar</li>
+                </ul>
+                <p style="font-size: 1.3em; margin-top: 20px;"><strong>→ Basta pedir reembolso e recebe 100% de volta.</strong></p>
+                <p>Sem burocracia. Sem perguntas. Sem enrolação.</p>
+                <p>Link direto ou WhatsApp. <strong>Você recupera cada centavo.</strong></p>
+            </div>
+            
+            <h3>Sabe o que isso significa?</h3>
+            
+            <p>Que eu <strong>não posso te enganar mesmo que quisesse.</strong></p>
+            
+            <p>Se fosse golpe, eu:</p>
+            <ul>
+                <li>❌ Não daria garantia</li>
+                <li>❌ Não aceitaria reembolso</li>
+                <li>❌ Dificultaria o contato</li>
+                <li>❌ Prometeria resultados impossíveis</li>
+            </ul>
+            
+            <p><strong>Mas estou fazendo o OPOSTO de tudo isso.</strong></p>
+            
+            <div class="highlight-box">
+                <p style="font-size: 1.2em;">Estou colocando MEU risco (de perder a venda) para <strong>ELIMINAR o SEU risco</strong> (de perder dinheiro).</p>
+            </div>
+            
+            <h3>"E se eu pedir reembolso, você vai enrolar?"</h3>
+            
+            <p>Pelo contrário.</p>
+            
+            <p>Se pedir reembolso nos 21 dias, vou:</p>
+            <ol>
+                <li>Devolver 100% do valor</li>
+                <li>Ainda agradecer por ter tentado</li>
+                <li>E desejar sucesso na sua jornada</li>
+            </ol>
+            
+            <p><strong>Porque não quero seu dinheiro se não te entregar resultado.</strong></p>
+            
+            <p>Simples assim.</p>
+            
+            <div class="highlight-box">
+                <p style="font-size: 1.3em; text-align: center;"><strong>Então a verdadeira pergunta não é "será que é golpe?"</strong></p>
+                <p style="font-size: 1.3em; text-align: center; margin-top: 15px;">A verdadeira pergunta é:</p>
+                <p style="font-size: 1.4em; text-align: center; margin-top: 15px; color: #667eea;"><strong>"Será que eu vou deixar o medo de ser enganada(o) me impedir de uma transformação real?"</strong></p>
+                <p style="text-align: center; margin-top: 20px;">Você tem 21 dias para descobrir. <strong>Sem risco algum.</strong></p>
+            </div>
+            
+            <a href="#oferta" class="cta-button">QUERO TESTAR SEM RISCO POR 21 DIAS</a>
+        </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2>Olha o que você está deixando passar...</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>O que você TERIA</th>
+                            <th>O que você TEM agora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-teria">✅ Controle natural da alimentação</td>
+                            <td class="col-tem">❌ Luta constante com a comida</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Autoimagem positiva</td>
+                            <td class="col-tem">❌ Se evitando no espelho</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Energia e disposição</td>
+                            <td class="col-tem">❌ Cansaço e frustração</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Roupas que você ama</td>
+                            <td class="col-tem">❌ Armário cheio de "um dia uso"</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Confiança e leveza</td>
+                            <td class="col-tem">❌ Culpa e autocrítica</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Liberdade alimentar</td>
+                            <td class="col-tem">❌ Pensamento obsessivo sobre comida</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Bem-estar físico e mental</td>
+                            <td class="col-tem">❌ Ciclo de culpa e compulsão</td>
+                        </tr>
+                        <tr>
+                            <td class="col-teria">✅ Paz com seu corpo</td>
+                            <td class="col-tem">❌ Guerra interna diária</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p class="cta-after-table">Quanto tempo mais você quer viver na coluna da direita?</p>
+        </div>
+    </section>
+
+    <!-- OFERTA SECTION -->
+    <section id="oferta" class="oferta-section">
+        <div class="container">
+            <div class="oferta-box">
+                <h2>🎁 VOCÊ VOLTOU. EU RECOMPENSO ISSO.</h2>
+                <p class="subtitle">Condição exclusiva válida se comprar agora:</p>
+                
+                <div class="garantia-destaque">
+                    <h3>🛡️ Garantia de 21 dias</h3>
+                    <p>Você usa, segue o protocolo por 21 dias. Se sua mentalidade não mudar, é só solicitar: https://refund.hotmart.com ou diretamente no meu WhatsApp: 19974010028, que devolvo 100% do seu dinheiro.</p>
+                    <p><strong>Por que essa garantia que você não vê em lugar nenhum?</strong></p>
+                    <p>Porque acreditamos na eficiência da Hipnose.</p>
+                </div>
+                
+                <div class="bonus-list">
+                    <h3 style="margin-bottom: 25px; font-size: 1.8em;">O que você vai receber:</h3>
+                    
+                    <div class="bonus-item">
+                        <h4>✓ PROGRAMA COMPLETO Emagrecimento com Hipnose</h4>
+                        <p>21 dias de protocolo intensivo + acesso vitalício ao conteúdo</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>✓ BÔNUS 1: Perfil Comportamental</h4>
+                        <p>Ferramenta de autoconhecimento que identifica seu padrão dominante de comportamento mediante quatro arquétipos (Águia, Gato, Lobo, Tubarão). Ajuda a compreender como você naturalmente reage e faz suas escolhas.</p>
+                        <p class="valor">Valor se vendido separadamente: R$ 29,00</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>✓ BÔNUS 2: Priming Mental</h4>
+                        <p>É uma forma simples de PNL aplicada — transformar palavras em gatilhos visuais que mantêm o cérebro alinhado ao objetivo, sem esforço consciente. O sistema produz uma frase especial a cada dia.</p>
+                        <p class="valor">Valor se vendido separadamente: R$ 19,90</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>✓ BÔNUS 3: Sua Agente de Transformação IA - Héstia</h4>
+                        <p>É sua coach pessoal no processo de hipnoterapia para o emagrecimento. <strong>Com Héstia, você não está sozinho</strong>, cada conversa reacende a chama interna da constância — transformando o esforço em ritual e o hábito em paz.</p>
+                        <p class="valor">Valor se vendido separadamente: R$ 19,90/mês</p>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <p style="font-size: 1.3em; margin-bottom: 20px;">Sem falar que hipnoterapeutas cobram em sessões on-line ou presencial de <strong>R$ 150,00 a R$ 400,00</strong> por sessão.</p>
+                    
+                    <p class="price-old">Se fosse comprar tudo isso você pagaria: R$ 106,70</p>
+                    
+                    <p class="price-new">Você vai pagar hoje:</p>
+                    <p class="price-new">R$ 37,90</p>
+                                        
+                    <a href="SEU_LINK_DE_CHECKOUT" class="cta-button">SIM, QUERO MINHA TRANSFORMAÇÃO AGORA</a>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <span>🔒</span>
+                            <span>Compra segura</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span>✅</span>
+                            <span>Garantia incondicional</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span>💳</span>
+                            <span>Cartão ou PIX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>FAQ - Perguntas Frequentes</h2>
+            <p class="subtitle">Não FAQ genérico. Perguntas diretas:</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Por que devo confiar em você?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Não deve. Deve confiar na GARANTIA.</p>
+                            <p>Você tem 21 dias para testar completamente o programa. Se não funcionar, devolvo 100% do seu dinheiro sem fazer perguntas. Isso significa que eu assumo TODO o risco e você não tem nada a perder.</p>
+                            <p>Se fosse golpe, eu não ofereceria uma garantia tão forte assim.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Hipnose funciona online?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Funciona MELHOR.</strong></p>
+                            <p>Sabe por quê? Porque você está no conforto da sua casa, sem pressão, sem ansiedade de consultório. A hipnose funciona através de áudios que você escuta quando e onde quiser.</p>
+                            <p>Além disso, você pode repetir os áudios quantas vezes precisar, ao contrário de uma sessão presencial que acontece uma vez e acabou.</p>
+                            <p>Adele, Lily Allen e milhares de pessoas conseguiram resultados incríveis com hipnose remota. Você também pode.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo leva para ver resultados?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>A maioria das pessoas sente mudança na relação com comida entre <strong>7 a 14 dias</strong>.</p>
+                            <p>Você vai notar que:</p>
+                            <ul>
+                                <li>Pensa menos em comida obsessivamente</li>
+                                <li>Consegue parar de comer quando está satisfeito(a)</li>
+                                <li>Não sente mais aquela "necessidade emocional" de comer</li>
+                                <li>As escolhas alimentares ficam mais naturais</li>
+                            </ul>
+                            <p>O emagrecimento físico vem como CONSEQUÊNCIA dessas mudanças mentais, geralmente aparecendo de forma visível entre 3-6 semanas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">E se eu não conseguir fazer a hipnose direito?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Impossível.</strong> Se você consegue dormir, consegue fazer hipnose.</p>
+                            <p>Hipnose não é "estar inconsciente" ou "perder o controle". É simplesmente um estado de relaxamento profundo onde sua mente fica mais receptiva a sugestões positivas.</p>
+                            <p>Você já entrou em hipnose várias vezes sem saber:</p>
+                            <ul>
+                                <li>Quando está assistindo um filme e se emociona (não é real, mas seu cérebro acredita)</li>
+                                <li>Quando está dirigindo e "não lembra" do trajeto</li>
+                                <li>Quando está lendo e se desconecta do mundo ao redor</li>
+                            </ul>
+                            <p>Os áudios do programa foram criados justamente para guiar você nesse processo de forma simples e natural. Basta apertar o play e deixar acontecer.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Posso parcelar?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Sim, em até 12x no cartão.</strong></p>
+                            <p>Isso dá menos de R$ 50 por mês. Menos que uma pizza por semana.</p>
+                            <p>Pense nisso: quanto você já gastou com:</p>
+                            <ul>
+                                <li>Academia que não frequenta?</li>
+                                <li>Dietas que abandonou?</li>
+                                <li>Suplementos que não funcionaram?</li>
+                                <li>Roupas maiores porque ganhou peso?</li>
+                            </ul>
+                            <p>Este é um investimento que ataca a RAIZ do problema, não apenas os sintomas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Celebridades realmente usam hipnose?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Sim! E não é segredo.</strong></p>
+                            <p>Adele perdeu 50kg com hipnoterapia (<a href="https://www.hellomagazine.com/healthandbeauty/health-and-fitness/20190214067199/sarah-ferguson-hypnotherapy-weight-loss-adele/" target="_blank">Hello Magazine</a>).</p>
+                            <p>Matt Damon parou de fumar em 3 sessões (<a href="https://www.youtube.com/watch?v=fYqoGEbqE" target="_blank">vídeo</a>).</p>
+                            <p>Lily Allen emagreceu 3 tamanhos (<a href="https://www.terra.com.br/vida-e-estilo/autocuidado/lily-allen-faz-tratamento-de-hipnose-para-emagrecer,be7a81e53VgnCLD200000bbcceb0aRCRD.html" target="_blank">Terra</a>).</p>
+                            <p>A diferença? Elas não ficaram em dúvida. Tentaram e funcionou.</p>
+                            <p><strong>E você pode ter acesso ao mesmo método que elas usaram</strong> — sem precisar pagar milhares de reais por sessão presencial.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo dura o programa?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>21 dias de protocolo intensivo</strong> + acesso vitalício ao conteúdo.</p>
+                            <p>Os primeiros 21 dias são fundamentais porque é o tempo que o cérebro precisa para começar a criar novos padrões neurais.</p>
+                            <p>Depois desse período inicial, você continua com acesso a todos os áudios, ferramentas e bônus para usar sempre que precisar de reforço.</p>
+                            <p>É como ter um hipnoterapeuta particular disponível 24/7, para sempre.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Preciso fazer dieta junto?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Não. E essa é a beleza do método.</strong></p>
+                            <p>A hipnose trabalha ANTES da dieta — ela reprograma sua relação com a comida para que você faça escolhas melhores NATURALMENTE, sem força de vontade.</p>
+                            <p>Quando sua mente muda, seus comportamentos mudam automaticamente:</p>
+                            <ul>
+                                <li>Você para de comer por ansiedade</li>
+                                <li>Perde o interesse por alimentos que te sabotam</li>
+                                <li>Sente saciedade mais rápido</li>
+                                <li>Faz escolhas saudáveis sem "ter que se controlar"</li>
+                            </ul>
+                            <p>Não é privação. É libertação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Olha, você só tem 2 opções agora...</h2>
+            
+            <div class="final-options">
+                <div class="final-option">
+                    <h3>1️⃣ Fecha esta página de novo</h3>
+                    <p>E daqui a 6 meses está no mesmo lugar (ou pior), se perguntando "e se eu tivesse tentado?"</p>
+                    <p>Continua com:</p>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>A luta constante com a comida</li>
+                        <li>O corpo que te incomoda</li>
+                        <li>A autoestima baixa</li>
+                        <li>O ciclo de culpa e compulsão</li>
+                    </ul>
+                </div>
+                
+                <div class="final-option" style="border: 3px solid #48bb78; background: rgba(72, 187, 120, 0.15);">
+                    <h3>2️⃣ Aceita a oferta sem risco</h3>
+                    <p>Experimenta por 21 dias. Se não transformar sua relação com a comida e seu corpo, recebe tudo de volta + R$ 100.</p>
+                    <p><strong>VOCÊ LITERALMENTE NÃO TEM NADA A PERDER.</strong></p>
+                    <p style="margin-top: 20px; font-size: 1.2em;">Apenas peso (e crenças limitantes).</p>
+                </div>
+            </div>
+            
+            <a href="SEU_LINK_DE_CHECKOUT" class="cta-button" style="margin-top: 50px;">SIM, QUERO MINHA TRANSFORMAÇÃO AGORA</a>
+            
+            <div class="trust-badges" style="margin-top: 40px;">
+                <div class="trust-badge">
+                    <span>🔒</span>
+                    <span>Compra segura</span>
+                </div>
+                <div class="trust-badge">
+                    <span>✅</span>
+                    <span>Garantia incondicional</span>
+                </div>
+                <div class="trust-badge">
+                    <span>💳</span>
+                    <span>Cartão ou Pix</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 1.1em; opacity: 0.9;">A escolha é sua. Mas escolha agora.</p>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Função para mostrar dobra de objeção específica
+        function mostrarDobra(tipo) {
+            // Esconde todas as dobras
+            const dobras = document.querySelectorAll('.objecao-dobra');
+            dobras.forEach(dobra => {
+                dobra.classList.remove('active');
+                dobra.style.display = 'none';
+            });
+            
+            // Mostra a dobra selecionada
+            const dobraSelecionada = document.getElementById('dobra-' + tipo);
+            if (dobraSelecionada) {
+                dobraSelecionada.style.display = 'block';
+                setTimeout(() => {
+                    dobraSelecionada.classList.add('active');
+                    dobraSelecionada.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+        
+        // Funções do Modal
+        function abrirModal() {
+            document.getElementById('modalCelebrities').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Previne scroll do body
+        }
+        
+        function fecharModal() {
+            document.getElementById('modalCelebrities').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura scroll do body
+        }
+        
+        // Fecha modal ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalCelebrities');
+            if (event.target == modal) {
+                fecharModal();
+            }
+        }
+        
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isActive = this.classList.contains('active');
+                    
+                    // Fecha todas as FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.classList.remove('active');
+                    });
+                    
+                    // Se não estava ativo, abre o clicado
+                    if (!isActive) {
+                        this.classList.add('active');
+                        this.nextElementSibling.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Animação de entrada para elementos quando ficam visíveis
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Aplica animação aos cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.celebrity-card, .quote-card, .faq-item, .bonus-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+        
+        // Timer countdown (opcional - se quiser adicionar urgência real)
+        function iniciarCountdown(horas) {
+            const countdownElement = document.getElementById('countdown-timer');
+            if (!countdownElement) return;
+            
+            const agora = new Date().getTime();
+            const fim = agora + (horas * 60 * 60 * 1000);
+            
+            const intervalo = setInterval(function() {
+                const agora = new Date().getTime();
+                const distancia = fim - agora;
+                
+                const horasRestantes = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutosRestantes = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundosRestantes = Math.floor((distancia % (1000 * 60)) / 1000);
+                
+                countdownElement.innerHTML = horasRestantes + "h " + minutosRestantes + "m " + segundosRestantes + "s";
+                
+                if (distancia < 0) {
+                    clearInterval(intervalo);
+                    countdownElement.innerHTML = "OFERTA EXPIRADA";
+                }
+            }, 1000);
+        }
+        
+        // Tracking de eventos (integrar com seu pixel/analytics)
+        function trackEvent(eventName, eventData) {
+            // Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+            
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', eventName, eventData);
+            }
+            
+            console.log('Event tracked:', eventName, eventData);
+        }
+        
+        // Track cliques nos botões
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track cliques nas objeções
+            document.querySelectorAll('.objecao-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    trackEvent('ObjecaoClicada', {
+                        objecao: this.textContent.trim()
+                    });
+                });
+            });
+            
+            // Track cliques nos CTAs
+            document.querySelectorAll('.cta-button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    trackEvent('CTAClicado', {
+                        posicao: this.textContent.trim()
+                    });
+                });
+            });
+            
+            // Track abertura do modal
+            document.querySelector('.ver-mais-btn')?.addEventListener('click', function() {
+                trackEvent('ModalCelebridadesAberto', {});
+            });
+            
+            // Track FAQ abertos
+            document.querySelectorAll('.faq-question').forEach(faq => {
+                faq.addEventListener('click', function() {
+                    trackEvent('FAQAberto', {
+                        pergunta: this.textContent.trim()
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
